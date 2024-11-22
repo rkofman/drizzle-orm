@@ -20,9 +20,7 @@ async function readMigrationFiles({ journal, migrations }: MigrationConfig): Pro
 		}
 
 		try {
-			const result = query.split('--> statement-breakpoint').map((it) => {
-				return it;
-			});
+			const result = query.split('--> statement-breakpoint');
 
 			migrationQueries.push({
 				sql: result,

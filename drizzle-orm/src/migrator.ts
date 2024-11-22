@@ -41,9 +41,7 @@ export function readMigrationFiles(config: MigrationConfig): MigrationMeta[] {
 		try {
 			const query = fs.readFileSync(`${migrationFolderTo}/${journalEntry.tag}.sql`).toString();
 
-			const result = query.split('--> statement-breakpoint').map((it) => {
-				return it;
-			});
+			const result = query.split('--> statement-breakpoint');
 
 			migrationQueries.push({
 				sql: result,
